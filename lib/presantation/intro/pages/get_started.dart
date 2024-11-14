@@ -6,6 +6,7 @@ import 'package:spotify/common/widgets/buttons/basic_app_button.dart';
 import 'package:spotify/core/configs/assets/app_images.dart';
 import 'package:spotify/core/configs/assets/app_vectors.dart';
 import 'package:spotify/core/configs/themes/app_color.dart';
+import 'package:spotify/presantation/chose%20mode/pages/chose_mode.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});
@@ -16,10 +17,7 @@ class GetStartedPage extends StatelessWidget {
       body: Stack(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: 40,
-              vertical: 40
-            ),
+
             decoration: BoxDecoration(
 
               image: DecorationImage(
@@ -27,45 +25,52 @@ class GetStartedPage extends StatelessWidget {
                   image: AssetImage(AppImages.introBg)
               )
             ),
-            child: Column(
-              children: [
-                Align(
-                  alignment:Alignment.topCenter,
-                    child: SvgPicture.asset(AppVectors.logo),
-                ),
-                Spacer(),
-                Text("Enjoy Listening To Music",
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white
-                ),
-                ),
-                SizedBox(height: 21,),
-                Text("Enjoy Listening To Music Enjoy Listening To Music Enjoy Listening To Music"
-                    "Enjoy Listening To Music Enjoy Listening To MusicEnjoy Listening To Music Enjoy Listening To Music",
-                  style: TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.grey
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 20,),
 
-                BasicAppButton(
-                    onPressed: (){
-
-                    },
-                    title: 'Get Started',
-                  height: 60,
-                )
-
-              ],
-            ),
           ),
           Container(
             color: Colors.black.withOpacity(0.15),
+              padding: EdgeInsets.symmetric(
+                  horizontal: 40,
+                  vertical: 40
+              ),
+              child: Column(
+                children: [
+                  Align(
+                    alignment:Alignment.topCenter,
+                    child: SvgPicture.asset(AppVectors.logo),
+                  ),
+                  Spacer(),
+                  Text("Enjoy Listening To Music",
+                    style: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white
+                    ),
+                  ),
+                  SizedBox(height: 21,),
+                  Text("Enjoy Listening To Music Enjoy Listening To Music Enjoy Listening To Music"
+                      "Enjoy Listening To Music Enjoy Listening To MusicEnjoy Listening To Music Enjoy Listening To Music",
+                    style: TextStyle(
+                        fontSize: 10,
+                        fontWeight: FontWeight.w500,
+                        color: AppColors.grey
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                  SizedBox(height: 20,),
+
+                  BasicAppButton(
+                    onPressed: (){
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ChoseModePage(),)
+                      );
+                    },
+                    title: 'Get Started',
+                    height: 60,
+                  )
+
+                ],
+              )
           )
         ],
       ),
