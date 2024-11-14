@@ -10,6 +10,7 @@ class AppTheme{
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
+        foregroundColor: Colors.white,
         textStyle: TextStyle(
           fontWeight:FontWeight.bold,
           fontSize: 20,
