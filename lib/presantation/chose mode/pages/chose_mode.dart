@@ -1,7 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:spotify/main.dart';
+import 'package:spotify/presantation/chose%20mode/bloc/theme_cubit.dart';
 
 import '../../../common/widgets/buttons/basic_app_button.dart';
 import '../../../core/configs/assets/app_images.dart';
@@ -55,21 +58,27 @@ class ChoseModePage extends StatelessWidget {
 
                       Column(
                         children: [
-                          ClipOval(
-                            child: BackdropFilter(
+                          GestureDetector(
+                            onTap: (){
+                              print("khaja");
+                              context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
+                            },
+                            child: ClipOval(
+                              child: BackdropFilter(
 
-                              filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
-                              child: Container(
-                                height: 60,
-                                width: 60,
+                                filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
+                                child: Container(
+                                  height: 60,
+                                  width: 60,
 
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: Color(0xff30393c).withOpacity(0.5)
-                                ),
-                                child: SvgPicture.asset(
-                                  AppVectors.moon,
-                                  fit: BoxFit.none,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xff30393c).withOpacity(0.5)
+                                  ),
+                                  child: SvgPicture.asset(
+                                    AppVectors.moon,
+                                    fit: BoxFit.none,
+                                  ),
                                 ),
                               ),
                             ),
@@ -87,21 +96,26 @@ class ChoseModePage extends StatelessWidget {
                       SizedBox(width: 40,),
                       Column(
                         children: [
-                          ClipOval(
-                            child: BackdropFilter(
-
-                              filter: ImageFilter.blur(sigmaX: 10,sigmaY: 10),
-                              child: Container(
-                                height: 60,
-                                width: 60,
-
-                                decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Color(0xff30393c).withOpacity(0.5)
-                                ),
-                                child:SvgPicture.asset(
-                                  AppVectors.sun,
-                                  fit: BoxFit.none,
+                          GestureDetector(
+                            onTap: (){
+                              context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+                            },
+                            child: ClipOval(
+                              child: BackdropFilter(
+                            
+                                filter: ImageFilter.blur(sigmaX: 10,sigmaY:10),
+                                child: Container(
+                                  height: 60,
+                                  width: 60,
+                            
+                                  decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color(0xff30393c).withOpacity(0.5)
+                                  ),
+                                  child:SvgPicture.asset(
+                                    AppVectors.sun,
+                                    fit: BoxFit.none,
+                                  ),
                                 ),
                               ),
                             ),
