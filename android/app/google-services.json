@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "866752048729",
+    "project_id": "spotify-dac26",
+    "storage_bucket": "spotify-dac26.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866752048729:android:fb53bf28f00fcac073cb48",
+        "android_client_info": {
+          "package_name": "com.example.spotify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3WZP1rJTgG82RM92-mrKu5I2JxbhfU0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
